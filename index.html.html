@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f8f1e8" />
+  <meta name="description" content="Discover thoughtfully handcrafted jewellery from Handmade Jewel Art. Enquire about designs, prices and custom orders directly on WhatsApp." />
+  <title>Handmade Jewel Art | Thoughtfully Handcrafted Jewellery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #fbf6ef;
+      --paper: #fffdf9;
+      --ink: #34251f;
+      --muted: #806e62;
+      --rose: #bd796b;
+      --rose-dark: #925649;
+      --sage: #7d8870;
+      --line: #eaded2;
+      --gold: #b99a61;
+      --shadow: 0 18px 50px rgba(69, 43, 29, .09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--cream); font-family: "DM Sans", sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; object-fit: cover; }
+    .announcement { background: var(--ink); color: #fff8ef; text-align: center; padding: 10px 16px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(251,246,239,.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(234,222,210,.8); }
+    .nav { max-width: 1180px; margin: auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 11px; min-width: max-content; }
+    .brand-mark { width: 39px; height: 39px; border: 1px solid var(--gold); border-radius: 50%; display: grid; place-items: center; color: var(--rose-dark); font-family: "Playfair Display", serif; font-size: 21px; }
+    .brand-name { font-family: "Playfair Display", serif; font-size: 19px; line-height: 1.05; }
+    .brand-name small { display: block; margin-top: 5px; color: var(--muted); font: 9px "DM Sans", sans-serif; letter-spacing: .2em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 30px; font-size: 12px; color: #655249; }
+    .nav-links a:hover { color: var(--rose-dark); }
+    .nav-cta, .button { display: inline-flex; justify-content: center; align-items: center; gap: 9px; background: var(--rose-dark); color: white; border-radius: 99px; padding: 13px 21px; font-size: 12px; font-weight: 600; transition: .2s ease; border: 1px solid var(--rose-dark); }
+    .nav-cta:hover, .button:hover { background: var(--ink); border-color: var(--ink); transform: translateY(-2px); }
+    .menu-toggle { display: none; border: 0; background: transparent; color: var(--ink); font-size: 24px; cursor: pointer; }
+    .hero { max-width: 1180px; margin: auto; padding: 62px 24px 74px; display: grid; grid-template-columns: 1fr 1fr; gap: 58px; align-items: center; }
+    .eyebrow { color: var(--rose-dark); text-transform: uppercase; letter-spacing: .22em; font-size: 10px; font-weight: 700; }
+    h1, h2, h3 { font-family: "Playfair Display", serif; font-weight: 500; }
+    h1 { font-size: clamp(43px, 5.3vw, 70px); line-height: 1.05; letter-spacing: -.035em; margin: 19px 0 22px; max-width: 570px; }
+    h1 em { color: var(--rose-dark); font-weight: 500; }
+    .hero-copy { max-width: 440px; color: var(--muted); line-height: 1.85; font-size: 14px; }
+    .hero-actions { display: flex; align-items: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
+    .text-link { font-size: 12px; font-weight: 700; border-bottom: 1px solid var(--gold); padding-bottom: 5px; }
+    .trust-row { display: flex; align-items: center; gap: 12px; margin-top: 39px; color: var(--muted); font-size: 11px; }
+    .trust-stars { color: var(--gold); letter-spacing: 2px; font-size: 14px; }
+    .hero-art { position: relative; min-height: 500px; }
+    .hero-photo { height: 500px; border-radius: 48% 48% 8px 8px; overflow: hidden; background: #e7d4c5; box-shadow: var(--shadow); }
+    .hero-photo img { height: 100%; }
+    .hero-stamp { position: absolute; left: -27px; bottom: 37px; width: 118px; height: 118px; border-radius: 50%; background: var(--sage); color: white; display: grid; place-items: center; text-align: center; padding: 18px; font-family: "Playfair Display", serif; font-size: 17px; line-height: 1.15; transform: rotate(-9deg); box-shadow: var(--shadow); }
+    .hero-stamp span { display: block; font: 8px "DM Sans", sans-serif; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 5px; }
+    .floating-note { position: absolute; top: 43px; right: -22px; background: var(--paper); padding: 15px 18px; box-shadow: var(--shadow); border-radius: 5px; font-size: 11px; color: var(--muted); }
+    .floating-note strong { display: block; color: var(--ink); font-family: "Playfair Display", serif; font-size: 17px; font-weight: 500; margin-bottom: 4px; }
+    .section { padding: 82px 24px; }
+    .section-inner { max-width: 1180px; margin: auto; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 34px; }
+    .section-head h2 { font-size: clamp(32px, 4vw, 46px); margin: 10px 0 0; letter-spacing: -.025em; }
+    .section-head p { max-width: 350px; color: var(--muted); font-size: 13px; line-height: 1.8; margin: 0; }
+    .products-section { background: var(--paper); }
+    .filters { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 27px; }
+    .filter { border: 1px solid var(--line); background: transparent; border-radius: 99px; padding: 10px 17px; font: 11px "DM Sans", sans-serif; color: var(--muted); cursor: pointer; }
+    .filter.active, .filter:hover { background: var(--ink); color: white; border-color: var(--ink); }
+    .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .product-card { min-width: 0; }
+    .product-image { position: relative; overflow: hidden; border-radius: 5px; aspect-ratio: 4 / 4.7; background: #eee1d4; }
+    .product-image img { height: 100%; transition: transform .55s ease; }
+    .product-card:hover .product-image img { transform: scale(1.05); }
+    .product-tag { position: absolute; top: 13px; left: 13px; background: rgba(255,253,249,.92); color: var(--rose-dark); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; padding: 7px 9px; }
+    .product-info { padding: 15px 2px 4px; }
+    .product-info h3 { font-size: 19px; margin: 0 0 6px; }
+    .product-info p { color: var(--muted); font-size: 11px; margin: 0; }
+    .product-bottom { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 13px; }
+    .price { font-size: 12px; font-weight: 700; }
+    .order-link { font-size: 10px; color: var(--rose-dark); font-weight: 700; border-bottom: 1px solid #d5b4a9; padding-bottom: 3px; }
+    .story { display: grid; grid-template-columns: .9fr 1.1fr; gap: 76px; align-items: center; }
+    .story-images { position: relative; padding: 0 35px 35px 0; }
+    .story-main { height: 440px; border-radius: 5px; background: #e6d5c7; }
+    .story-small { position: absolute; right: 0; bottom: 0; width: 48%; height: 220px; border: 9px solid var(--cream); border-radius: 5px; }
+    .story-copy h2 { font-size: clamp(34px, 4vw, 49px); line-height: 1.1; margin: 14px 0 21px; }
+    .story-copy p { color: var(--muted); font-size: 13px; line-height: 1.95; }
+    .story-signature { margin-top: 26px; font-family: "Playfair Display", serif; font-style: italic; font-size: 23px; color: var(--rose-dark); }
+    .values { background: #eee7dc; padding: 54px 24px; }
+    .value-grid { max-width: 1180px; margin: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .value { display: flex; align-items: flex-start; gap: 16px; }
+    .value-icon { flex: 0 0 43px; height: 43px; border: 1px solid #c8b69f; border-radius: 50%; display: grid; place-items: center; color: var(--rose-dark); font-size: 18px; }
+    .value h3 { font-size: 18px; margin: 0 0 7px; }
+    .value p { color: var(--muted); font-size: 11px; line-height: 1.7; margin: 0; }
+    .social-section { background: var(--paper); text-align: center; }
+    .social-section h2 { font-size: clamp(32px, 4vw, 45px); margin: 12px 0; }
+    .social-section > .section-inner > p { color: var(--muted); font-size: 13px; margin: 0 auto 29px; max-width: 440px; line-height: 1.8; }
+    .social-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
+    .social-tile { aspect-ratio: 1; overflow: hidden; border-radius: 3px; background: #e8d8ca; }
+    .social-tile img { height: 100%; transition: transform .4s ease; }
+    .social-tile:hover img { transform: scale(1.06); }
+    .contact-banner { max-width: 1180px; margin: 0 auto; padding: 0 24px 82px; }
+    .contact-box { background: var(--sage); color: white; border-radius: 6px; padding: 48px 55px; display: flex; justify-content: space-between; align-items: center; gap: 25px; }
+    .contact-box .eyebrow { color: #e9d8b7; }
+    .contact-box h2 { font-size: clamp(30px, 4vw, 42px); margin: 10px 0; }
+    .contact-box p { color: #edf0e8; font-size: 12px; line-height: 1.7; max-width: 440px; margin: 0; }
+    .button-light { background: var(--paper); color: var(--ink); border-color: var(--paper); white-space: nowrap; }
+    .button-light:hover { background: var(--ink); color: white; }
+    footer { background: var(--ink); color: #f8eee3; padding: 34px 24px; }
+    .footer-inner { max-width: 1180px; margin: auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    footer .brand-mark { border-color: #b99a61; color: #e1c89b; }
+    footer .brand-name small { color: #c5b3a5; }
+    .footer-note { color: #c5b3a5; font-size: 10px; line-height: 1.7; }
+    .footer-links { display: flex; gap: 20px; color: #e5d5c8; font-size: 11px; }
+    .footer-links a:hover { color: white; }
+
+    :focus-visible { outline: 3px solid #b99a61; outline-offset: 3px; }
+    .whatsapp-float { position: fixed; right: 22px; bottom: 22px; z-index: 20; display: inline-flex; align-items: center; gap: 9px; padding: 13px 18px; border-radius: 99px; background: #267a52; color: #fff; box-shadow: 0 8px 28px rgba(28, 74, 49, .25); font-size: 12px; font-weight: 700; }
+    .whatsapp-float:hover { background: #1d6241; transform: translateY(-2px); }
+    .whatsapp-icon { width: 19px; height: 19px; display: inline-grid; place-items: center; border: 1.5px solid rgba(255,255,255,.9); border-radius: 50%; font-size: 12px; }
+    .product-image { box-shadow: 0 5px 18px rgba(69, 43, 29, .04); }
+    .product-card { transition: transform .25s ease; }
+    .product-card:hover { transform: translateY(-3px); }
+    .contact-box { box-shadow: 0 18px 45px rgba(50, 65, 43, .12); }
+    @media (max-width: 650px) { .whatsapp-float { right: 14px; bottom: 14px; padding: 12px 15px; } }
+
+    .hidden { display: none !important; }
+    @media (max-width: 900px) {
+      .hero { gap: 34px; padding-top: 45px; }
+      .hero-art { min-height: 420px; }
+      .hero-photo { height: 420px; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
+      .story { gap: 40px; }
+      .story-main { height: 380px; }
+      .story-small { height: 185px; }
+      .nav-links { gap: 17px; }
+    }
+    @media (max-width: 650px) {
+      .announcement { font-size: 9px; letter-spacing: .1em; }
+      .nav { padding: 14px 18px; }
+      .menu-toggle { display: block; }
+      .nav-cta { display: none; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); padding: 20px 24px 25px; border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; gap: 20px; }
+      .nav-links.open { display: flex; }
+      .hero { grid-template-columns: 1fr; padding: 45px 20px 56px; gap: 35px; }
+      h1 { font-size: 49px; }
+      .hero-art { min-height: 390px; margin: 0 10px 0 18px; }
+      .hero-photo { height: 390px; }
+      .floating-note { right: -9px; top: 25px; }
+      .hero-stamp { left: -17px; width: 100px; height: 100px; font-size: 15px; }
+      .section { padding: 62px 20px; }
+      .section-head { align-items: flex-start; flex-direction: column; gap: 14px; }
+      .product-grid { gap: 24px 13px; }
+      .product-info h3 { font-size: 17px; }
+      .product-bottom { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .story { grid-template-columns: 1fr; gap: 38px; }
+      .story-images { padding-right: 25px; }
+      .story-main { height: 380px; }
+      .story-small { height: 175px; }
+      .value-grid { grid-template-columns: 1fr; gap: 25px; }
+      .social-grid { grid-template-columns: repeat(2, 1fr); gap: 9px; }
+      .contact-banner { padding: 0 20px 60px; }
+      .contact-box { padding: 34px 25px; flex-direction: column; align-items: flex-start; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">Little pieces of art, made by hand · Made with love</div>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Handmade Jewel Art home">
+        <span class="brand-mark">J</span>
+        <span class="brand-name">Handmade Jewel Art<small>Wear a little art</small></span>
+      </a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#collection" onclick="closeMenu()">Collection</a>
+        <a href="#story" onclick="closeMenu()">Our Story</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+      </div>
+      <a class="nav-cta" href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <div class="eyebrow">Handcrafted · Heartfelt · One of a kind</div>
+        <h1>Jewellery with a little <em>more soul.</em></h1>
+        <p class="hero-copy">Discover thoughtfully handmade pieces that celebrate your individuality. From everyday little treasures to statement pieces for special moments, every detail is made with care.</p>
+        <div class="hero-actions">
+          <a class="button" href="#collection">Explore the collection <span>→</span></a>
+          <a class="text-link" href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener">Chat with us</a>
+        </div>
+        <div class="trust-row"><span class="trust-stars">★★★★★</span><span>Made by hand, chosen by heart</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1100&q=85" alt="Delicate handcrafted gold jewellery" />
+        </div>
+        <div class="hero-stamp"><div><span>Made with care</span>Made for<br>your story</div></div>
+        <div class="floating-note"><strong>Every piece</strong>has its own little story ✦</div>
+      </div>
+    </section>
+
+    <section class="section products-section" id="collection">
+      <div class="section-inner">
+        <div class="section-head">
+          <div><div class="eyebrow">Find your favourite</div><h2>Made to be treasured.</h2></div>
+          <p>Small-batch creations, carefully finished and full of character. Find the piece that feels like you.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filter collection">
+          <button class="filter active" data-filter="all">All pieces</button>
+          <button class="filter" data-filter="earrings">Earrings</button>
+          <button class="filter" data-filter="necklaces">Necklaces</button>
+          <button class="filter" data-filter="bracelets">Bracelets</button>
+          <button class="filter" data-filter="gifts">Gift picks</button>
+        </div>
+        <div class="product-grid" id="productGrid">
+          <article class="product-card" data-category="earrings gifts">
+            <a href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener" aria-label="Enquire about floral earrings on Instagram">
+              <div class="product-image"><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80" alt="Elegant handmade earrings" loading="lazy"><span class="product-tag">Bestseller style</span></div>
+            </a>
+            <div class="product-info"><h3>Floral Whispers</h3><p>Delicate details for everyday charm</p><div class="product-bottom"><span class="price">Enquire for price</span><a class="order-link" href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener">Ask on WhatsApp ↗</a></div></div>
+          </article>
+          <article class="product-card" data-category="necklaces gifts">
+            <a href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener" aria-label="Enquire about a handmade necklace on Instagram">
+              <div class="product-image"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80" alt="Minimal necklace on a neutral background" loading="lazy"><span class="product-tag">Easy to layer</span></div>
+            </a>
+            <div class="product-info"><h3>Golden Hour</h3><p>A timeless touch of elegance</p><div class="product-bottom"><span class="price">Enquire for price</span><a class="order-link" href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener">Ask on WhatsApp ↗</a></div></div>
+          </article>
+          <article class="product-card" data-category="bracelets">
+            <a href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener" aria-label="Enquire about a bracelet on Instagram">
+              <div class="product-image"><img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=700&q=80" alt="Gold bracelet jewellery detail" loading="lazy"></div>
+            </a>
+            <div class="product-info"><h3>Little Keepsake</h3><p>A sweet detail for your wrist</p><div class="product-bottom"><span class="price">Enquire for price</span><a class="order-link" href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener">Ask on WhatsApp ↗</a></div></div>
+          </article>
+          <article class="product-card" data-category="earrings gifts">
+            <a href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener" aria-label="Enquire about statement earrings on Instagram">
+              <div class="product-image"><img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=700&q=80" alt="Statement earrings with artistic detail" loading="lazy"><span class="product-tag">Gift favourite</span></div>
+            </a>
+            <div class="product-info"><h3>Artisan Muse</h3><p>For days worth dressing up for</p><div class="product-bottom"><span class="price">Enquire for price</span><a class="order-link" href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener">Ask on WhatsApp ↗</a></div></div>
+          </article>
+        </div>
+        <p style="text-align:center;color:var(--muted);font-size:11px;margin:32px 0 0;">Explore the sample styles below. Update the photos, product names and prices with your current collection before publishing.</p>
+      </div>
+    </section>
+
+    <section class="section" id="story">
+      <div class="section-inner story">
+        <div class="story-images">
+          <img class="story-main" src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=85" alt="Jewellery arranged in warm natural light" loading="lazy">
+          <img class="story-small" src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=600&q=80" alt="Close-up of jewellery craftsmanship" loading="lazy">
+        </div>
+        <div class="story-copy">
+          <div class="eyebrow">A little about us</div>
+          <h2>Not just jewellery.<br><em style="color:var(--rose-dark)">A handmade feeling.</em></h2>
+          <p>At Handmade Jewel Art, we believe the pieces you wear should feel personal. Each creation is inspired by colour, texture and the beauty of thoughtful details.</p>
+          <p>Whether you're treating yourself or choosing a meaningful gift, we want every order to feel special—from the first look to the moment you unwrap it.</p>
+          <p>Have a colour, style or occasion in mind? Send us a message and let's find something you'll love.</p>
+          <div class="story-signature">Made with love, always ♡</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="values">
+      <div class="value-grid">
+        <div class="value"><div class="value-icon">✿</div><div><h3>Made by hand</h3><p>Thoughtful details and a personal touch in every creation.</p></div></div>
+        <div class="value"><div class="value-icon">♡</div><div><h3>Made for gifting</h3><p>Little treasures for birthdays, celebrations and just-because days.</p></div></div>
+        <div class="value"><div class="value-icon">✧</div><div><h3>Made for you</h3><p>Message us about your preferred style, colours or custom ideas.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section social-section">
+      <div class="section-inner">
+        <div class="eyebrow">Need help choosing?</div>
+        <h2>Little details, lots of love.</h2>
+        <p>Ask us about new designs, available pieces and custom orders. We’re happy to help you choose.</p>
+        <div class="social-grid">
+          <a class="social-tile" href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener" aria-label="View Handmade Jewel Art on Instagram"><img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=500&q=80" alt="Jewellery inspiration" loading="lazy"></a>
+          <a class="social-tile" href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener" aria-label="View Handmade Jewel Art on Instagram"><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=500&q=80" alt="Earrings detail" loading="lazy"></a>
+          <a class="social-tile" href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener" aria-label="View Handmade Jewel Art on Instagram"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=500&q=80" alt="Necklace detail" loading="lazy"></a>
+          <a class="social-tile" href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener" aria-label="View Handmade Jewel Art on Instagram"><img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=500&q=80" alt="Bracelet detail" loading="lazy"></a>
+        </div>
+        <a class="button" href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener">Chat with us on WhatsApp ↗</a>
+      </div>
+    </section>
+
+    <section class="contact-banner" id="contact">
+      <div class="contact-box">
+        <div><div class="eyebrow">Let's make it yours</div><h2>Found a piece you love?</h2><p>For prices, availability, custom requests and orders, message us on WhatsApp. We’ll help you find a piece you’ll love.</p></div>
+        <a class="button button-light" href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener">Message us on WhatsApp ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener" aria-label="Chat with Handmade Jewel Art on WhatsApp"><span class="whatsapp-icon">W</span> Chat on WhatsApp</a>
+  <footer>
+    <div class="footer-inner">
+      <a class="brand" href="#home">
+        <span class="brand-mark">J</span>
+        <span class="brand-name">Handmade Jewel Art<small>Wear a little art</small></span>
+      </a>
+      <div class="footer-note">Thoughtfully handcrafted. Beautifully yours.<br>© <span id="year"></span> Handmade Jewel Art.</div>
+      <div class="footer-links"><a href="#collection">Collection</a><a href="#story">Our story</a><a href="https://wa.me/91YOURNUMBER?text=Hi%20Handmade%20Jewel%20Art%21%20I%27d%20like%20to%20enquire%20about%20your%20jewellery." target="_blank" rel="noopener">WhatsApp ↗</a></div>
+    </div>
+  </footer>
+  <script>
+    // IMPORTANT: Replace 91YOURNUMBER in every WhatsApp link with your WhatsApp number (country code + number, digits only).
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      const button = document.querySelector('.menu-toggle');
+      nav.classList.toggle('open');
+      button.setAttribute('aria-expanded', nav.classList.contains('open') ? 'true' : 'false');
+    }
+    function closeMenu() {
+      document.getElementById('navLinks').classList.remove('open');
+      document.querySelector('.menu-toggle').setAttribute('aria-expanded', 'false');
+    }
+    document.querySelectorAll('.filter').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.filter').forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        document.querySelectorAll('.product-card').forEach(card => {
+          const categories = card.dataset.category.split(' ');
+          card.classList.toggle('hidden', filter !== 'all' && !categories.includes(filter));
+        });
+      });
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
